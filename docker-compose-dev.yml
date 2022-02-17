@@ -13,4 +13,5 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ./files:/usr/app/files
-
+    depends_on:
+      - redis-server
