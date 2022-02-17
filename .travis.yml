@@ -6,3 +6,16 @@ services:
 
 script: 
 - docker-compose -f docker-compose-dev.yml up --build --abort-on-container-exit
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'flask'
+  env: 'flask-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-802083121799'
+  bucket_path: 'flask'
+  on:
+    all_branches: true
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

@@ -9,10 +9,12 @@ services:
     # build from Dockerfile present in "." or current folder
     image: nacbapat/flask
     restart: always
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./files:/usr/app/files
     ports:
       #port on localmachine : port on container
-      - "5001:5000"
+      - "80:5000"
 
