@@ -14,4 +14,4 @@ services:
     volumes:
       - ./files:/usr/app/files
     depends_on:
-      - redis
+      - redis-server
