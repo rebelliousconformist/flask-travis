@@ -1,0 +1,16 @@
+version: '3'
+
+#number of containers
+services: 
+  redis-server:
+    #image to use
+    image: redis
+  flask-app:
+    # build from Dockerfile present in "." or current folder
+    image: nacbapat/flask
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./files:/usr/app/files
+

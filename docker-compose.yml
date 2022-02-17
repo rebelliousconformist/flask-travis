@@ -1,0 +1,18 @@
+version: '3'
+
+#number of containers
+services: 
+  redis-server:
+    #image to use
+    image: redis
+  flask-app:
+    # build from Dockerfile present in "." or current folder
+    image: nacbapat/flask
+    restart: always
+    build: .
+    volumes:
+      - ./files:/usr/app/files
+    ports:
+      #port on localmachine : port on container
+      - "5001:5000"
+
