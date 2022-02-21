@@ -20,7 +20,7 @@ def helloworld():
 
 @app.route("/hello")
 def hello():
-    return render_template("index.html", placeholder = "hello this is me")
+    return render_template("index.html", placeholder = "hello demo for Panos")
 
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0",port=5000)
